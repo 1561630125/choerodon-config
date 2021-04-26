@@ -1,0 +1,19 @@
+preJob:
+  preInitDB:
+    datasource:
+      url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+      username: choerodon
+      password: password
+env:
+  open:
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system.svc:8000/eureka/
+    HZERO_AUTO_REFRESH_SWAGGER_ENABLE: true
+    # 服务启动时，是否同步父子角色权限
+    CHOERODON_ROLE_PERMISSION_ASYNC: false
+    SPRING_REDIS_HOST: c7n-redis.c7n-system
+    SPRING_REDIS_PORT: 6379
+    # 此db不可更改
+    SPRING_REDIS_DATABASE: 1
+    SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/hzero_admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+    SPRING_DATASOURCE_USERNAME: choerodon
+    SPRING_DATASOURCE_PASSWORD: password

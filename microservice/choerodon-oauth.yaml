@@ -1,0 +1,16 @@
+env:
+  open:
+    # 如果使用https 该参数设置为true
+    HZERO_OAUTH_LOGIN_ENABLE_HTTPS: false
+    HZERO_OAUTH_LOGIN_SUCCESS_URL: http://app.choerodon.com
+    HZERO_OAUTH_LOGIN_DEFAULT_CLIENT_ID: choerodon
+    HZERO_GATEWAY_URL: http://api.gitlab.choerodon.com
+    HZERO_OAUTH_BASE_URL: http://api.gitlab.choerodon.com/oauth
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system.svc:8000/eureka/
+    SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/hzero_platform?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+    SPRING_DATASOURCE_USERNAME: choerodon
+    SPRING_DATASOURCE_PASSWORD: password
+    SPRING_REDIS_HOST: c7n-redis.c7n-system
+    SPRING_REDIS_PORT: 6379
+    # 此db不可更改
+    SPRING_REDIS_DATABASE: 3

@@ -1,0 +1,7 @@
+ingress:
+  enabled: true
+  host: hzero.choerodon.com
+env:
+  open:
+    BUILD_CLIENT_ID: choerodon
+    BUILD_API_HOST: http://api.gitlab.choerodon.com

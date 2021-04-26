@@ -1,0 +1,20 @@
+env:
+  MYSQL_HOST: c7n-mysql.c7n-system.svc
+  MYSQL_PORT: "3306"
+  MYSQL_USER: root
+  MYSQL_PASS: password
+  SQL_SCRIPT: |
+    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
+    CREATE DATABASE IF NOT EXISTS hzero_platform DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS hzero_message DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS hzero_file DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS hzero_monitor DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS hzero_admin DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS asgard_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    GRANT ALL PRIVILEGES ON hzero_platform.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON hzero_message.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON hzero_file.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON hzero_monitor.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON hzero_admin.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON asgard_service.* TO choerodon@'%';
+    FLUSH PRIVILEGES;

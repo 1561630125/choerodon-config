@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: c7n-swagger-nodeport
+  namespace: c7n-system
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 30308
+    targetPort: 8050
+    nodePort: 30003
+  selector:
+    choerodon.io/release: choerodon-swagger
+

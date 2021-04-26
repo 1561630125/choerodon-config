@@ -1,0 +1,38 @@
+preJob:
+  preInitDB:
+    datasource:
+      driver: com.mysql.jdbc.Driver
+      password: password
+      url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+      username: choerodon
+    datasources:
+      # 多数据源初始化
+      platform:
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+        password: password
+        driver: com.mysql.jdbc.Driver
+env:
+  open:
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system.svc:8000/eureka/
+    HARBOR_BASE_URL: https://harbor.choerodon.com
+    HARBOR_PASSWORD: Harbor12345
+    HARBOR_USER_NAME: admin
+    SPRING_DATASOURCE_PASSWORD: password
+    SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/hrds_prod_repo?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+    SPRING_DATASOURCE_USERNAME: choerodon
+    SPRING_REDIS_DATABASE: 0
+    SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+    SPRING_REDIS_PORT: 6379
+    ##系统默认nexus服务地址
+    NEXUS_DEFAULT_BASE_URL: http://nexus.choerodon.com
+    #系统默认nexus服务，超级管理员用户
+    NEXUS_DEFAULT_USER_NAME: admin
+    #系统默认nexus服务，超级管理员用户密码
+    NEXUS_DEFAULT_PASSWORD: admin123
+    #系统默认nexus服务，是否启用仓库级的匿名访问控制。 1:启用  0:不启用
+    NEXUS_DEFAULT_ENABLE_ANONYMOUS_FLAG: 0
+    #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户
+    NEXUS_DEFAULT_ANONYMOUS_USER: test-anonymous-user
+    #系统默认nexus服务，启用仓库级的匿名访问控制时需要配置该值(即enableAnonymousFlag==1时)。 nexus服务开启全局匿名访问时，配置的用户对应的角色
+    NEXUS_DEFAULT_ANONYMOUS_ROLE: test-anonymous

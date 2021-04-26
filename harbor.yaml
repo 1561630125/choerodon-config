@@ -1,0 +1,22 @@
+expose:
+  ingress:
+    hosts:
+      core: harbor.choerodon.com
+externalURL: https://harbor.choerodon.com
+persistence:
+  persistentVolumeClaim:
+    registry:
+      storageClass: nfs-provisioner
+    jobservice:
+      storageClass: nfs-provisioner
+    database:
+      storageClass: nfs-provisioner
+    redis:
+      storageClass: nfs-provisioner
+chartmuseum:
+  enabled: false
+clair:
+  enabled: false
+notary:
+  enabled: false
+harborAdminPassword: Harbor12345

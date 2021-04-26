@@ -1,0 +1,25 @@
+preJob:
+  preInitDB:
+    datasource:
+      url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+      username: choerodon
+      password: password
+    datasources:
+      # 多数据源初始化 初始化菜单数据
+      # 支持框架数据和agile进行分库 指定菜单初始化地址
+      platform:
+        url: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+        username: choerodon
+        password: password
+        driver: com.mysql.jdbc.Driver
+env:
+  open:
+    SPRING_REDIS_HOST: c7n-redis.c7n-system.svc
+    SPRING_REDIS_PORT: 6379
+    SPRING_REDIS_DATABASE: 14
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system.svc:8000/eureka/
+    SPRING_DATASOURCE_URL: jdbc:mysql://c7n-mysql.c7n-system.svc:3306/knowledgebase_service?useUnicode=true&characterEncoding=utf-8&useSSL=false&useInformationSchema=true&remarks=true&serverTimezone=Asia/Shanghai
+    SPRING_DATASOURCE_USERNAME: choerodon
+    SPRING_DATASOURCE_PASSWORD: password
+    SERVICES_ATTACHMENT_URL: http://minio.choerodon.com/knowledgebase-service/
+    ELASTICSEARCH_IP: elasticsearch-kb.c7n-system.svc:9200 

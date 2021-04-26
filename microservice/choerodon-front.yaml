@@ -1,0 +1,16 @@
+env:
+  open:
+    LOCAL: false
+    CLIENT_ID: choerodon
+    API_HOST: http://api.gitlab.choerodon.com
+    DEVOPS_HOST: ws://devops.choerodon.com
+    HEADER_TITLE_NAME: Choerodon | 多云应用技术集成平台
+    COOKIE_SERVER: http://app.choerodon.com
+    TITLE_NAME: Choerodon | 多云应用技术集成平台
+    WEBSOCKET_SERVER: ws://message.choerodon.com
+    FILE_SERVER: http://minio.choerodon.com
+    HZERO_FRONT: http://hzero.choerodon.com
+    DEVOPS_WEBSOCKET_SECRET_KEY: devops_ws
+ingress:
+  enabled: true
+  host: app.choerodon.com

@@ -1,0 +1,12 @@
+env:
+  MYSQL_HOST: c7n-mysql.c7n-system.svc
+  MYSQL_PORT: "3306"
+  MYSQL_USER: root
+  MYSQL_PASS: password
+  SQL_SCRIPT: |
+    CREATE USER IF NOT EXISTS 'choerodon'@'%' IDENTIFIED BY 'password';
+    CREATE DATABASE IF NOT EXISTS devops_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE DATABASE IF NOT EXISTS workflow_service DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    GRANT ALL PRIVILEGES ON devops_service.* TO choerodon@'%';
+    GRANT ALL PRIVILEGES ON workflow_service.* TO choerodon@'%';
+    FLUSH PRIVILEGES;

@@ -1,0 +1,11 @@
+mode: distributed
+accessKey: "AKIAIOSFODNN7EXAMPLE"
+secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+persistence:
+    enabled: true
+    storageClass: nfs-provisioner
+ingress:
+    enabled: true
+    path: /
+    hosts:
+    - minio.choerodon.com

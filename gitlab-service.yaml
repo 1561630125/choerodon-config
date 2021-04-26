@@ -1,0 +1,5 @@
+env:
+  open:
+    EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://choerodon-register.c7n-system.svc:8000/eureka/
+    GITLAB_URL: http://gitlab.choerodon.com
+    GITLAB_PRIVATETOKEN: 5c7abc_Fts_yYBgqCt6F

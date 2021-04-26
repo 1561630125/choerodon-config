@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  tls:
+    enabled: false
+initAdminPassword:
+  enabled: true
+  password: admin123
+nexusProxy:
+  enabled: false
+  env:
+    nexusHttpHost: nexus.choerodon.com
+persistence:
+  storageClass: nfs-provisioner

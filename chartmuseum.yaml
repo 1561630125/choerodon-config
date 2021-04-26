@@ -1,0 +1,17 @@
+env:
+  open:
+    STORAGE: local
+    AUTH_ANONYMOUS_GET: "true"
+    DISABLE_API: "false"
+    DEPTH: 2
+  secret:
+    BASIC_AUTH_PASS: password
+    BASIC_AUTH_USER: choerodon
+persistence:
+  enabled: true
+  storageClass: nfs-provisioner
+ingress:
+  enabled: true
+  hosts:
+    - name: study.choerodon.com
+      path: /
